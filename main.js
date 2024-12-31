@@ -42,3 +42,18 @@ const bundledObject = {
     verbs: verbs,
     fruitsAndVeggies: fruitsAndVeggies
 };
+
+function getRandomWord(type) {
+    const randomIndex = Math.floor(Math.random() * bundledObject[type].length);
+    return bundledObject[type][randomIndex];
+}
+
+function getRandomSentence() {
+    const pronoun = getRandomWord("pronouns");
+    const verb = getRandomWord("verbs");
+    const fruitOrVeggie = getRandomWord("fruitsAndVeggies");
+
+    return `${pronoun} ${verb}s a ${fruitOrVeggie}.`;
+}
+
+console.log(getRandomSentence());
